@@ -5,9 +5,9 @@ const prisma = new PrismaClient();
 
 export async function PATCH(
     req: NextRequest,
-    { params }: { params: { id: string } }
+    context: { params: { id: string } }
 ) {
-    const id = params.id;
+    const id = context.params.id;
 
     try {
         // Get current state
